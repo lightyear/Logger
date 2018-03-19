@@ -31,6 +31,12 @@ class LoggerTests: XCTestCase {
         expect(self.logger.sinks.first) === self.sink
     }
 
+    func testRemoveSink() {
+        self.logger.remove(sink: self.sink)
+
+        expect(self.logger.sinks).to(beEmpty())
+    }
+
     func testLog() {
         let timestamp = Date()
         self.logger.log(.debug, "message", data: ["key": "value"])

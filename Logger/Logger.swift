@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol LogSink {
+public protocol LogSink: class {
     func log(timestamp: Date, level: Logger.Level, message: String, data: [String: Any])
 }
 
@@ -39,6 +39,14 @@ public class Logger {
         pthread_rwlock_wrlock(&self.lock)
         defer { pthread_rwlock_unlock(&self.lock) }
         self.sinks.append(sink)
+    }
+
+    public func remove(sink: LogSink) {
+        pthread_rwlock_wrlock(&self.lock)
+        defer { pthread_rwlock_unlock(&self.lock) }
+        if let index = self.sinks.index(where: { $0 === sink }) {
+            self.sinks.remove(at: index)
+        }
     }
 
     public func log(_ level: Level, _ message: String, data: [String: Any] = [:]) {
