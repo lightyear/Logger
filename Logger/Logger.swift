@@ -48,4 +48,24 @@ public class Logger {
     public func warning(_ message: String, data: [String: Any] = [:]) {
         log(.warning, message, data: data)
     }
+
+    public static func log(_ level: Level, _ message: String, data: [String: Any] = [:]) {
+        self.shared.log(level, message, data: data)
+    }
+
+    public static func debug(_ message: String, data: [String: Any] = [:]) {
+        self.shared.log(.debug, message, data: data)
+    }
+
+    public static func error(_ message: String, data: [String: Any] = [:]) {
+        self.shared.log(.error, message, data: data)
+    }
+
+    public static func info(_ message: String, data: [String: Any] = [:]) {
+        self.shared.log(.info, message, data: data)
+    }
+
+    public static func warning(_ message: String, data: [String: Any] = [:]) {
+        self.shared.log(.warning, message, data: data)
+    }
 }
