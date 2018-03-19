@@ -22,14 +22,29 @@ public class Logger {
 
     public internal(set) static var shared = Logger()
 
+    private var lock = pthread_rwlock_t()
     internal var sinks = [LogSink]()
 
+    init() {
+        if pthread_rwlock_init(&self.lock, nil) != 0 {
+            fatalError("Failed to initialize internal Logger lock: errno=\(errno)")
+        }
+    }
+
+    deinit {
+        pthread_rwlock_destroy(&self.lock)
+    }
+
     public func add(sink: LogSink) {
+        pthread_rwlock_wrlock(&self.lock)
+        defer { pthread_rwlock_unlock(&self.lock) }
         self.sinks.append(sink)
     }
 
     public func log(_ level: Level, _ message: String, data: [String: Any] = [:]) {
         let timestamp = Date()
+        pthread_rwlock_rdlock(&self.lock)
+        defer { pthread_rwlock_unlock(&self.lock) }
         self.sinks.forEach { $0.log(timestamp: timestamp, level: level, message: message, data: data) }
     }
 
