@@ -7,30 +7,89 @@
 //
 
 import XCTest
+import Nimble
 @testable import Logger
 
 class LoggerTests: XCTestCase {
-    
+    var logger: Logger!
+    var sink: TestSink!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.logger = Logger()
+        self.sink = TestSink()
+        self.logger.add(sink: self.sink)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        self.logger = nil
+        self.sink = nil
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testAddSink() {
+        expect(self.logger.sinks.first) === self.sink
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testLog() {
+        let timestamp = Date()
+        self.logger.log(.debug, "message", data: ["key": "value"])
+
+        expect(self.sink.logs).to(haveCount(1))
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.debug
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
     }
-    
+
+    func testDebug() {
+        let timestamp = Date()
+        self.logger.debug("message", data: ["key": "value"])
+
+        expect(self.sink.logs).to(haveCount(1))
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.debug
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
+    }
+
+    func testInfo() {
+        let timestamp = Date()
+        self.logger.info("message", data: ["key": "value"])
+
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.info
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
+    }
+
+    func testWarning() {
+        let timestamp = Date()
+        self.logger.warning("message", data: ["key": "value"])
+
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.warning
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
+    }
+
+    func testError() {
+        let timestamp = Date()
+        self.logger.error("message", data: ["key": "value"])
+
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.error
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
+    }
 }

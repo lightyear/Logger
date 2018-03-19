@@ -11,6 +11,8 @@
 		AA88027A205F47C700B3F8EB /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA880279205F47C700B3F8EB /* LoggerTests.swift */; };
 		AA880286205F483000B3F8EB /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = AA880285205F483000B3F8EB /* Cartfile.private */; };
 		AA880289205F49FC00B3F8EB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA880288205F49FC00B3F8EB /* Nimble.framework */; };
+		AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028B205F4AC400B3F8EB /* Logger.swift */; };
+		AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028D205F4BC000B3F8EB /* TestSink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		AA88027B205F47C700B3F8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA880285205F483000B3F8EB /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		AA880288205F49FC00B3F8EB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		AA88028B205F4AC400B3F8EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AA88028D205F4BC000B3F8EB /* TestSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				AA88026F205F47C700B3F8EB /* Info.plist */,
+				AA88028B205F4AC400B3F8EB /* Logger.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				AA880279205F47C700B3F8EB /* LoggerTests.swift */,
+				AA88028D205F4BC000B3F8EB /* TestSink.swift */,
 				AA88027B205F47C700B3F8EB /* Info.plist */,
 			);
 			path = LoggerTests;
@@ -160,6 +166,7 @@
 				TargetAttributes = {
 					AA88026A205F47C600B3F8EB = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					AA880273205F47C700B3F8EB = {
@@ -227,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */,
 				AA88027A205F47C700B3F8EB /* LoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +376,7 @@
 		AA880280205F47C700B3F8EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -380,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lightyearsoftware.Logger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,6 +399,7 @@
 		AA880281205F47C700B3F8EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -409,6 +421,7 @@
 		AA880283205F47C700B3F8EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MM253VSPP;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -427,6 +440,7 @@
 		AA880284205F47C700B3F8EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3MM253VSPP;
 				FRAMEWORK_SEARCH_PATHS = (
