@@ -13,6 +13,7 @@
 		AA880289205F49FC00B3F8EB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA880288205F49FC00B3F8EB /* Nimble.framework */; };
 		AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028B205F4AC400B3F8EB /* Logger.swift */; };
 		AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028D205F4BC000B3F8EB /* TestSink.swift */; };
+		AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028F206083DF00B3F8EB /* ConsoleSink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		AA880288205F49FC00B3F8EB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		AA88028B205F4AC400B3F8EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AA88028D205F4BC000B3F8EB /* TestSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSink.swift; sourceTree = "<group>"; };
+		AA88028F206083DF00B3F8EB /* ConsoleSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleSink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				AA88026F205F47C700B3F8EB /* Info.plist */,
 				AA88028B205F4AC400B3F8EB /* Logger.swift */,
+				AA88028F206083DF00B3F8EB /* ConsoleSink.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */,
 				AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

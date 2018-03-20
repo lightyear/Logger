@@ -13,11 +13,11 @@ public protocol LogSink: class {
 }
 
 public class Logger {
-    public enum Level {
-        case debug
-        case info
-        case warning
-        case error
+    public enum Level: String {
+        case debug   = "DEBUG"
+        case info    = "INFO"
+        case warning = "WARNING"
+        case error   = "ERROR"
     }
 
     public internal(set) static var shared = Logger()
