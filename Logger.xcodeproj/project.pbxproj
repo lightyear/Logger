@@ -14,6 +14,8 @@
 		AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028B205F4AC400B3F8EB /* Logger.swift */; };
 		AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028D205F4BC000B3F8EB /* TestSink.swift */; };
 		AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028F206083DF00B3F8EB /* ConsoleSink.swift */; };
+		AA8802942061E5E600B3F8EB /* StringSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802932061E5E600B3F8EB /* StringSink.swift */; };
+		AA8802962061F0C100B3F8EB /* StringSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802952061F0C100B3F8EB /* StringSinkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		AA88028B205F4AC400B3F8EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AA88028D205F4BC000B3F8EB /* TestSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSink.swift; sourceTree = "<group>"; };
 		AA88028F206083DF00B3F8EB /* ConsoleSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleSink.swift; sourceTree = "<group>"; };
+		AA8802932061E5E600B3F8EB /* StringSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSink.swift; sourceTree = "<group>"; };
+		AA8802952061F0C100B3F8EB /* StringSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSinkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				AA88026F205F47C700B3F8EB /* Info.plist */,
 				AA88028B205F4AC400B3F8EB /* Logger.swift */,
 				AA88028F206083DF00B3F8EB /* ConsoleSink.swift */,
+				AA8802932061E5E600B3F8EB /* StringSink.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -94,6 +99,7 @@
 			children = (
 				AA880279205F47C700B3F8EB /* LoggerTests.swift */,
 				AA88028D205F4BC000B3F8EB /* TestSink.swift */,
+				AA8802952061F0C100B3F8EB /* StringSinkTests.swift */,
 				AA88027B205F47C700B3F8EB /* Info.plist */,
 			);
 			path = LoggerTests;
@@ -239,6 +245,7 @@
 			files = (
 				AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */,
 				AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */,
+				AA8802942061E5E600B3F8EB /* StringSink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */,
+				AA8802962061F0C100B3F8EB /* StringSinkTests.swift in Sources */,
 				AA88027A205F47C700B3F8EB /* LoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
