@@ -1,0 +1,18 @@
+excluded:
+  - Carthage
+opt_in_rules:
+  - closure_end_indentation
+  - contains_over_first_not_nil
+  - empty_count
+  - empty_string
+  - first_where
+  - nimble_operator
+  - operator_usage_whitespace
+  - overridden_super_call
+  - prohibited_super_call
+  - sorted_first_last
+  - trailing_closure
+
+line_length:
+  warning: 300
+  error: 400

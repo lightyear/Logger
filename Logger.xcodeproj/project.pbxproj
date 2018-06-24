@@ -16,6 +16,7 @@
 		AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028F206083DF00B3F8EB /* ConsoleSink.swift */; };
 		AA8802942061E5E600B3F8EB /* StringSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802932061E5E600B3F8EB /* StringSink.swift */; };
 		AA8802962061F0C100B3F8EB /* StringSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802952061F0C100B3F8EB /* StringSinkTests.swift */; };
+		AACDF70020DFCF7100B3F8EB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		AA88028F206083DF00B3F8EB /* ConsoleSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleSink.swift; sourceTree = "<group>"; };
 		AA8802932061E5E600B3F8EB /* StringSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSink.swift; sourceTree = "<group>"; };
 		AA8802952061F0C100B3F8EB /* StringSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSinkTests.swift; sourceTree = "<group>"; };
+		AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AA880285205F483000B3F8EB /* Cartfile.private */,
+				AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */,
 				AA88026D205F47C600B3F8EB /* Logger */,
 				AA880278205F47C700B3F8EB /* LoggerTests */,
 				AA88026C205F47C600B3F8EB /* Products */,
@@ -131,6 +134,7 @@
 			buildConfigurationList = AA88027F205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "Logger" */;
 			buildPhases = (
 				AA880266205F47C600B3F8EB /* Sources */,
+				AACDF6FE20DFCF2000B3F8EB /* SwiftLint */,
 				AA880267205F47C600B3F8EB /* Frameworks */,
 				AA880268205F47C600B3F8EB /* Headers */,
 				AA880269205F47C600B3F8EB /* Resources */,
@@ -208,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACDF70020DFCF7100B3F8EB /* .swiftlint.yml in Resources */,
 				AA880286205F483000B3F8EB /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +241,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		AACDF6FE20DFCF2000B3F8EB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"SwiftLint is not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
