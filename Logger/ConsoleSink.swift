@@ -23,10 +23,10 @@ public class ConsoleSink: LogSink {
         self.timeFormatter.dateFormat = self.dateFormat
     }
 
-    public func log(timestamp: Date, level: Logger.Level, message: String, data: [String : Any]) {
+    public func log(timestamp: Date, level: Logger.Level, message: String, data: [String: Any]) {
         let timestamp = self.timeFormatter.string(from: timestamp)
         let thread = pthread_mach_thread_np(pthread_self())
-        let data = data.count > 0 ? " \(data)" : ""
+        let data = data.isEmpty ? "" : " \(data)"
         print("\(timestamp) [\(thread)] \(level.rawValue) \(message)\(data)")
     }
 }

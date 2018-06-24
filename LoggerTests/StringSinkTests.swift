@@ -20,7 +20,7 @@ class StringSinkTests: XCTestCase {
         self.sink = StringSink()
         self.logger.add(sink: self.sink)
     }
-    
+
     override func tearDown() {
         self.logger = nil
         self.sink = nil
