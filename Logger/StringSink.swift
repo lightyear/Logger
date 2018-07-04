@@ -37,4 +37,7 @@ public class StringSink: LogSink {
             print("\(timestamp) [\(thread)] \(level.rawValue) \(message)\(data)", to: &self.string)
         }
     }
+
+    public func flush() {
+    }
 }

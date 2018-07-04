@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		AA880275205F47C700B3F8EB /* Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88026B205F47C600B3F8EB /* Logger.framework */; };
 		AA88027A205F47C700B3F8EB /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA880279205F47C700B3F8EB /* LoggerTests.swift */; };
-		AA880286205F483000B3F8EB /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = AA880285205F483000B3F8EB /* Cartfile.private */; };
 		AA880289205F49FC00B3F8EB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA880288205F49FC00B3F8EB /* Nimble.framework */; };
 		AA88028C205F4AC400B3F8EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028B205F4AC400B3F8EB /* Logger.swift */; };
 		AA88028E205F4BC000B3F8EB /* TestSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028D205F4BC000B3F8EB /* TestSink.swift */; };
 		AA880290206083DF00B3F8EB /* ConsoleSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028F206083DF00B3F8EB /* ConsoleSink.swift */; };
 		AA8802942061E5E600B3F8EB /* StringSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802932061E5E600B3F8EB /* StringSink.swift */; };
 		AA8802962061F0C100B3F8EB /* StringSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802952061F0C100B3F8EB /* StringSinkTests.swift */; };
-		AACDF70020DFCF7100B3F8EB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +40,7 @@
 		AA88028F206083DF00B3F8EB /* ConsoleSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleSink.swift; sourceTree = "<group>"; };
 		AA8802932061E5E600B3F8EB /* StringSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSink.swift; sourceTree = "<group>"; };
 		AA8802952061F0C100B3F8EB /* StringSinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSinkTests.swift; sourceTree = "<group>"; };
+		AABA4F3020EC579800B3F8EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +67,7 @@
 		AA880261205F47C600B3F8EB = {
 			isa = PBXGroup;
 			children = (
+				AABA4F3020EC579800B3F8EB /* README.md */,
 				AA880285205F483000B3F8EB /* Cartfile.private */,
 				AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */,
 				AA88026D205F47C600B3F8EB /* Logger */,
@@ -212,8 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AACDF70020DFCF7100B3F8EB /* .swiftlint.yml in Resources */,
-				AA880286205F483000B3F8EB /* Cartfile.private in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +238,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		AACDF6FE20DFCF2000B3F8EB /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

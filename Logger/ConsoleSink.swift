@@ -29,4 +29,7 @@ public class ConsoleSink: LogSink {
         let data = data.isEmpty ? "" : " \(data)"
         print("\(timestamp) [\(thread)] \(level.rawValue) \(message)\(data)")
     }
+
+    public func flush() {
+    }
 }

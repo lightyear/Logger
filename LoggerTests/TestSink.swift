@@ -22,4 +22,7 @@ class TestSink: LogSink {
     func log(timestamp: Date, level: Logger.Level, message: String, data: [String: Any]) {
         logs.append(Log(timestamp: timestamp, level: level, message: message, data: data))
     }
+
+    func flush() {
+    }
 }

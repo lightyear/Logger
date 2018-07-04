@@ -50,6 +50,10 @@ class LoggerTests: XCTestCase {
         expect(log.data["key"] as? String) == "value"
     }
 
+    func testLogFatalNeverReturns() {
+        expect { self.logger.log(.fatal, "message") }.to(throwAssertion())
+    }
+
     func testDebug() {
         let timestamp = Date()
         self.logger.debug("message", data: ["key": "value"])
@@ -99,6 +103,19 @@ class LoggerTests: XCTestCase {
         expect(log.data["key"] as? String) == "value"
     }
 
+    func testFatal() {
+        let timestamp = Date()
+        expect { self.logger.fatal("message", data: ["key": "value"]) }.to(throwAssertion())
+
+        let log = self.sink.logs[0]
+        expect(log.timestamp).to(beCloseTo(timestamp, within: 0.003))
+        expect(log.level) == Logger.Level.fatal
+        expect(log.message) == "message"
+        expect(log.data).to(haveCount(1))
+        expect(log.data["key"] as? String) == "value"
+
+    }
+
     func testClassLogDelegatesToSharedLogger() {
         Logger.shared = self.logger
         Logger.log(.debug, "message")
@@ -116,6 +133,13 @@ class LoggerTests: XCTestCase {
     func testClassErrorDelegatesToSharedLogger() {
         Logger.shared = self.logger
         Logger.error("message")
+
+        expect(self.sink.logs).to(haveCount(1))
+    }
+
+    func testClassFatalDelegatesToSharedLogger() {
+        Logger.shared = self.logger
+        expect { Logger.fatal("message") }.to(throwAssertion())
 
         expect(self.sink.logs).to(haveCount(1))
     }
