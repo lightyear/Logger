@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA88026A205F47C600B3F8EB"
                BuildableName = "Logger.framework"
-               BlueprintName = "Logger"
+               BlueprintName = "Logger-iOS"
                ReferencedContainer = "container:Logger.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA880273205F47C700B3F8EB"
-               BuildableName = "LoggerTests.xctest"
-               BlueprintName = "LoggerTests"
+               BuildableName = "LoggerTests-iOS.xctest"
+               BlueprintName = "LoggerTests-iOS"
                ReferencedContainer = "container:Logger.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,7 +46,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA88026A205F47C600B3F8EB"
             BuildableName = "Logger.framework"
-            BlueprintName = "Logger"
+            BlueprintName = "Logger-iOS"
             ReferencedContainer = "container:Logger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,7 +68,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA88026A205F47C600B3F8EB"
             BuildableName = "Logger.framework"
-            BlueprintName = "Logger"
+            BlueprintName = "Logger-iOS"
             ReferencedContainer = "container:Logger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -86,7 +86,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA88026A205F47C600B3F8EB"
             BuildableName = "Logger.framework"
-            BlueprintName = "Logger"
+            BlueprintName = "Logger-iOS"
             ReferencedContainer = "container:Logger.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

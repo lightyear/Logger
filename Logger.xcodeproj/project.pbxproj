@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA327B4B213B220000B3F8EB /* Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA327B42213B220000B3F8EB /* Logger.framework */; };
+		AA327B5B213B227000B3F8EB /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA880279205F47C700B3F8EB /* LoggerTests.swift */; };
+		AA327B5C213B227000B3F8EB /* TestSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028D205F4BC000B3F8EB /* TestSink.swift */; };
+		AA327B5D213B227000B3F8EB /* StringSinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802952061F0C100B3F8EB /* StringSinkTests.swift */; };
+		AA327B5E213B227500B3F8EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028B205F4AC400B3F8EB /* Logger.swift */; };
+		AA327B5F213B227500B3F8EB /* ConsoleSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88028F206083DF00B3F8EB /* ConsoleSink.swift */; };
+		AA327B61213B227500B3F8EB /* StringSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8802932061E5E600B3F8EB /* StringSink.swift */; };
+		AA327B64213B242000B3F8EB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA327B63213B242000B3F8EB /* Nimble.framework */; };
 		AA880275205F47C700B3F8EB /* Logger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA88026B205F47C600B3F8EB /* Logger.framework */; };
 		AA88027A205F47C700B3F8EB /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA880279205F47C700B3F8EB /* LoggerTests.swift */; };
 		AA880289205F49FC00B3F8EB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA880288205F49FC00B3F8EB /* Nimble.framework */; };
@@ -18,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AA327B4C213B220000B3F8EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA880262205F47C600B3F8EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA327B41213B220000B3F8EB;
+			remoteInfo = "Logger-macOS";
+		};
 		AA880276205F47C700B3F8EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AA880262205F47C600B3F8EB /* Project object */;
@@ -28,9 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA327B42213B220000B3F8EB /* Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA327B45213B220000B3F8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA327B4A213B220000B3F8EB /* Logger-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logger-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA327B51213B220000B3F8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA327B63213B242000B3F8EB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		AA88026B205F47C600B3F8EB /* Logger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Logger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA88026F205F47C700B3F8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA880274205F47C700B3F8EB /* LoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA880274205F47C700B3F8EB /* LoggerTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LoggerTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA880279205F47C700B3F8EB /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
 		AA88027B205F47C700B3F8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA880285205F483000B3F8EB /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
@@ -45,6 +65,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AA327B3F213B220000B3F8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA327B47213B220000B3F8EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA327B64213B242000B3F8EB /* Nimble.framework in Frameworks */,
+				AA327B4B213B220000B3F8EB /* Logger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA880267205F47C600B3F8EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +100,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA327B43213B220000B3F8EB /* Logger-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				AA327B45213B220000B3F8EB /* Info.plist */,
+			);
+			path = "Logger-macOS";
+			sourceTree = "<group>";
+		};
+		AA327B4E213B220000B3F8EB /* Logger-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA327B51213B220000B3F8EB /* Info.plist */,
+			);
+			path = "Logger-macOSTests";
+			sourceTree = "<group>";
+		};
 		AA880261205F47C600B3F8EB = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +124,8 @@
 				AACDF6FF20DFCF7100B3F8EB /* .swiftlint.yml */,
 				AA88026D205F47C600B3F8EB /* Logger */,
 				AA880278205F47C700B3F8EB /* LoggerTests */,
+				AA327B43213B220000B3F8EB /* Logger-macOS */,
+				AA327B4E213B220000B3F8EB /* Logger-macOSTests */,
 				AA88026C205F47C600B3F8EB /* Products */,
 				AA880287205F49FB00B3F8EB /* Frameworks */,
 			);
@@ -81,7 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				AA88026B205F47C600B3F8EB /* Logger.framework */,
-				AA880274205F47C700B3F8EB /* LoggerTests.xctest */,
+				AA880274205F47C700B3F8EB /* LoggerTests-iOS.xctest */,
+				AA327B42213B220000B3F8EB /* Logger.framework */,
+				AA327B4A213B220000B3F8EB /* Logger-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,6 +167,7 @@
 		AA880287205F49FB00B3F8EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA327B63213B242000B3F8EB /* Nimble.framework */,
 				AA880288205F49FC00B3F8EB /* Nimble.framework */,
 			);
 			name = Frameworks;
@@ -119,6 +176,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		AA327B3D213B220000B3F8EB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA880268205F47C600B3F8EB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,9 +193,46 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AA88026A205F47C600B3F8EB /* Logger */ = {
+		AA327B41213B220000B3F8EB /* Logger-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA88027F205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "Logger" */;
+			buildConfigurationList = AA327B53213B220000B3F8EB /* Build configuration list for PBXNativeTarget "Logger-macOS" */;
+			buildPhases = (
+				AA327B3D213B220000B3F8EB /* Headers */,
+				AA327B3E213B220000B3F8EB /* Sources */,
+				AA327B3F213B220000B3F8EB /* Frameworks */,
+				AA327B40213B220000B3F8EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Logger-macOS";
+			productName = "Logger-macOS";
+			productReference = AA327B42213B220000B3F8EB /* Logger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AA327B49213B220000B3F8EB /* Logger-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA327B56213B220000B3F8EB /* Build configuration list for PBXNativeTarget "Logger-macOSTests" */;
+			buildPhases = (
+				AA327B46213B220000B3F8EB /* Sources */,
+				AA327B47213B220000B3F8EB /* Frameworks */,
+				AA327B48213B220000B3F8EB /* Resources */,
+				AA327B62213B23E700B3F8EB /* Copy Carthage frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA327B4D213B220000B3F8EB /* PBXTargetDependency */,
+			);
+			name = "Logger-macOSTests";
+			productName = "Logger-macOSTests";
+			productReference = AA327B4A213B220000B3F8EB /* Logger-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA88026A205F47C600B3F8EB /* Logger-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA88027F205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "Logger-iOS" */;
 			buildPhases = (
 				AA880266205F47C600B3F8EB /* Sources */,
 				AACDF6FE20DFCF2000B3F8EB /* SwiftLint */,
@@ -143,14 +244,14 @@
 			);
 			dependencies = (
 			);
-			name = Logger;
+			name = "Logger-iOS";
 			productName = Logger;
 			productReference = AA88026B205F47C600B3F8EB /* Logger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AA880273205F47C700B3F8EB /* LoggerTests */ = {
+		AA880273205F47C700B3F8EB /* LoggerTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA880282205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "LoggerTests" */;
+			buildConfigurationList = AA880282205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "LoggerTests-iOS" */;
 			buildPhases = (
 				AA880270205F47C700B3F8EB /* Sources */,
 				AA880271205F47C700B3F8EB /* Frameworks */,
@@ -162,9 +263,9 @@
 			dependencies = (
 				AA880277205F47C700B3F8EB /* PBXTargetDependency */,
 			);
-			name = LoggerTests;
+			name = "LoggerTests-iOS";
 			productName = LoggerTests;
-			productReference = AA880274205F47C700B3F8EB /* LoggerTests.xctest */;
+			productReference = AA880274205F47C700B3F8EB /* LoggerTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -173,10 +274,18 @@
 		AA880262205F47C600B3F8EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Light Year Software, LLC";
 				TargetAttributes = {
+					AA327B41213B220000B3F8EB = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
+					AA327B49213B220000B3F8EB = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
 					AA88026A205F47C600B3F8EB = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1000;
@@ -201,13 +310,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA88026A205F47C600B3F8EB /* Logger */,
-				AA880273205F47C700B3F8EB /* LoggerTests */,
+				AA88026A205F47C600B3F8EB /* Logger-iOS */,
+				AA880273205F47C700B3F8EB /* LoggerTests-iOS */,
+				AA327B41213B220000B3F8EB /* Logger-macOS */,
+				AA327B49213B220000B3F8EB /* Logger-macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AA327B40213B220000B3F8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA327B48213B220000B3F8EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA880269205F47C600B3F8EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +350,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AA327B62213B23E700B3F8EB /* Copy Carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+			);
+			name = "Copy Carthage frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		AA88028A205F4A6200B3F8EB /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +405,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AA327B3E213B220000B3F8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA327B5F213B227500B3F8EB /* ConsoleSink.swift in Sources */,
+				AA327B5E213B227500B3F8EB /* Logger.swift in Sources */,
+				AA327B61213B227500B3F8EB /* StringSink.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA327B46213B220000B3F8EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA327B5C213B227000B3F8EB /* TestSink.swift in Sources */,
+				AA327B5D213B227000B3F8EB /* StringSinkTests.swift in Sources */,
+				AA327B5B213B227000B3F8EB /* LoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA880266205F47C600B3F8EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -284,14 +448,124 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AA327B4D213B220000B3F8EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA327B41213B220000B3F8EB /* Logger-macOS */;
+			targetProxy = AA327B4C213B220000B3F8EB /* PBXContainerItemProxy */;
+		};
 		AA880277205F47C700B3F8EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA88026A205F47C600B3F8EB /* Logger */;
+			target = AA88026A205F47C600B3F8EB /* Logger-iOS */;
 			targetProxy = AA880276205F47C700B3F8EB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		AA327B54213B220000B3F8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3MM253VSPP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Logger-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lightyearsoftware.Logger;
+				PRODUCT_MODULE_NAME = Logger;
+				PRODUCT_NAME = Logger;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		AA327B55213B220000B3F8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3MM253VSPP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Logger-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lightyearsoftware.Logger;
+				PRODUCT_MODULE_NAME = Logger;
+				PRODUCT_NAME = Logger;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		AA327B57213B220000B3F8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3MM253VSPP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Logger-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightyearsoftware.Logger-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		AA327B58213B220000B3F8EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3MM253VSPP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "Logger-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lightyearsoftware.Logger-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		AA88027D205F47C700B3F8EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,7 +701,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lightyearsoftware.Logger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Logger;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -450,7 +724,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lightyearsoftware.Logger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Logger;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,6 +772,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AA327B53213B220000B3F8EB /* Build configuration list for PBXNativeTarget "Logger-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA327B54213B220000B3F8EB /* Debug */,
+				AA327B55213B220000B3F8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA327B56213B220000B3F8EB /* Build configuration list for PBXNativeTarget "Logger-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA327B57213B220000B3F8EB /* Debug */,
+				AA327B58213B220000B3F8EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AA880265205F47C600B3F8EB /* Build configuration list for PBXProject "Logger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -507,7 +799,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA88027F205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "Logger" */ = {
+		AA88027F205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "Logger-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA880280205F47C700B3F8EB /* Debug */,
@@ -516,7 +808,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA880282205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "LoggerTests" */ = {
+		AA880282205F47C700B3F8EB /* Build configuration list for PBXNativeTarget "LoggerTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA880283205F47C700B3F8EB /* Debug */,
