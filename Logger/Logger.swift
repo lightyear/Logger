@@ -104,7 +104,7 @@ public class Logger {
     public func remove(sink: LogSink) {
         pthread_rwlock_wrlock(&self.lock)
         defer { pthread_rwlock_unlock(&self.lock) }
-        if let index = self.sinks.index(where: { $0 === sink }) {
+        if let index = self.sinks.firstIndex(where: { $0 === sink }) {
             self.sinks.remove(at: index)
         }
     }
