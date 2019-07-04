@@ -10,7 +10,7 @@ import XCTest
 import Nimble
 @testable import Logger
 
-class LoggerTests: XCTestCase {
+final class LoggerTests: XCTestCase {
     var logger: Logger!
     var sink: TestSink!
 
@@ -48,10 +48,6 @@ class LoggerTests: XCTestCase {
         expect(log.message) == "message"
         expect(log.data).to(haveCount(1))
         expect(log.data["key"] as? String) == "value"
-    }
-
-    func testLogFatalNeverReturns() {
-        expect { self.logger.log(.fatal, "message") }.to(throwAssertion())
     }
 
     func testDebug() {
@@ -103,6 +99,7 @@ class LoggerTests: XCTestCase {
         expect(log.data["key"] as? String) == "value"
     }
 
+#if !SWIFT_PACKAGE
     func testFatal() {
         let timestamp = Date()
         expect { self.logger.fatal("message", data: ["key": "value"]) }.to(throwAssertion())
@@ -113,8 +110,8 @@ class LoggerTests: XCTestCase {
         expect(log.message) == "message"
         expect(log.data).to(haveCount(1))
         expect(log.data["key"] as? String) == "value"
-
     }
+#endif
 
     func testClassLogDelegatesToSharedLogger() {
         Logger.shared = self.logger
@@ -137,12 +134,14 @@ class LoggerTests: XCTestCase {
         expect(self.sink.logs).to(haveCount(1))
     }
 
+#if !SWIFT_PACKAGE
     func testClassFatalDelegatesToSharedLogger() {
         Logger.shared = self.logger
         expect { Logger.fatal("message") }.to(throwAssertion())
 
         expect(self.sink.logs).to(haveCount(1))
     }
+#endif
 
     func testClassInfoDelegatesToSharedLogger() {
         Logger.shared = self.logger
