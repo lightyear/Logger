@@ -56,12 +56,31 @@ network log aggregation servers, error collection services, etc.
 */
 public class Logger {
     /// The severity level of a log message.
-    public enum Level: String {
+    public enum Level: String, Equatable, Comparable {
+
         case debug   = "DEBUG"
         case info    = "INFO"
         case warning = "WARNING"
         case error   = "ERROR"
         case fatal   = "FATAL"
+
+        private var ordinal: Int {
+            switch self {
+            case .debug:   return 0
+            case .info:    return 1
+            case .warning: return 2
+            case .error:   return 3
+            case .fatal:   return 4
+            }
+        }
+
+        public static func < (lhs: Level, rhs: Level) -> Bool {
+            return lhs.ordinal < rhs.ordinal
+        }
+
+        static public func > (lhs: Level, rhs: Level) -> Bool {
+            return lhs.ordinal > rhs.ordinal
+        }
     }
 
     /** The application-wide shared Logger instance.
