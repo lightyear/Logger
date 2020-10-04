@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "Logger", targets: ["Logger"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Quick/Nimble", from: "8.0.2")
+        .package(url: "https://github.com/Quick/Nimble", from: "9.0.0")
     ],
     targets: [
         .target(name: "Logger"),
