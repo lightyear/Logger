@@ -91,18 +91,8 @@ public class Logger {
     */
     public internal(set) static var shared = Logger()
 
-    private var lock = pthread_rwlock_t()
+    private let lock = Lock()
     internal var sinks = [LogSink]()
-
-    init() {
-        if pthread_rwlock_init(&self.lock, nil) != 0 {
-            fatalError("Failed to initialize internal Logger lock: errno=\(errno)")
-        }
-    }
-
-    deinit {
-        pthread_rwlock_destroy(&self.lock)
-    }
 
     /** Add a sink instance to the list of active sinks.
 
@@ -110,9 +100,9 @@ public class Logger {
       you want to remove it later.
     */
     public func add(sink: LogSink) {
-        pthread_rwlock_wrlock(&self.lock)
-        defer { pthread_rwlock_unlock(&self.lock) }
-        self.sinks.append(sink)
+        lock.around {
+            self.sinks.append(sink)
+        }
     }
 
     /** Remove a sink instance from the list of active sinks.
@@ -121,10 +111,10 @@ public class Logger {
       the list of active sinks, the list is unchanged.
     */
     public func remove(sink: LogSink) {
-        pthread_rwlock_wrlock(&self.lock)
-        defer { pthread_rwlock_unlock(&self.lock) }
-        if let index = self.sinks.firstIndex(where: { $0 === sink }) {
-            self.sinks.remove(at: index)
+        lock.around {
+            if let index = self.sinks.firstIndex(where: { $0 === sink }) {
+                self.sinks.remove(at: index)
+            }
         }
     }
 
@@ -142,14 +132,14 @@ public class Logger {
     */
     public func log(_ level: Level, _ message: String, data: [String: Any] = [:]) {
         let timestamp = Date()
-        pthread_rwlock_rdlock(&self.lock)
-        self.sinks.forEach { $0.log(timestamp: timestamp, level: level, message: message, data: data) }
-        pthread_rwlock_unlock(&self.lock)
+        lock.around {
+            self.sinks.forEach { $0.log(timestamp: timestamp, level: level, message: message, data: data) }
+        }
 
         if level == .fatal {
-            // Acquire a writer lock to block all other loggers. Note that it's
+            // Acquire the lock to block all other loggers. Note that it's
             // never released because we're about to crash the process.
-            pthread_rwlock_wrlock(&self.lock)
+            lock.lock()
             self.sinks.forEach { $0.flush() }
             let data = data.isEmpty ? "" : " \(data)"
             fatalError("\(message)\(data)")
