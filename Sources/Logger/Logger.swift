@@ -9,7 +9,7 @@
 import Foundation
 
 /// A type suitable for use as a destination for log messages.
-public protocol LogSink: class {
+public protocol LogSink: AnyObject {
     /** Write/store/send a log message.
 
     This function is the primary entry point for a sink. It is responsible for
