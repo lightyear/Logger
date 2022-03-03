@@ -3,7 +3,7 @@
 //  LoggerTests
 //
 //  Created by Steve Madsen on 3/18/18.
-//  Copyright © 2018 Light Year Software, LLC. All rights reserved.
+//  Copyright © 2018 Light Year Software, LLC
 //
 
 import Foundation

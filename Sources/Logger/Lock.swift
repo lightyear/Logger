@@ -3,7 +3,7 @@
 //  Logger
 //
 //  Created by Steve Madsen on 3/3/22.
-//  Copyright © 2022 Light Year Software, LLC.
+//  Copyright © 2022 Light Year Software, LLC
 //
 
 import Foundation

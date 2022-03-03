@@ -3,6 +3,7 @@
 //  Logger
 //
 //  Created by Steve Madsen on 12/23/19.
+//  Copyright © 2019 Light Year Software, LLC
 //
 
 import XCTest
